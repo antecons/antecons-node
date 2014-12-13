@@ -6,14 +6,10 @@ Node.js binding for the [Antecons API](https://api.antecons.net)
 Installation and setup
 ----------------------
 
-Download latest version:
-
-    git clone https://github.com/antecons/antecons-node.git
-
-Include antecons.js somewhere in your project and instantiate the API with a
+Include `antecons` somewhere in your project and instantiate the API with a
 config containing your API key and API secret:
     
-    var Antecons = require('./lib/antecons')({
+    var Antecons = require('antecons')({
         apiKey: 'your_api_key',
         apiSecret: 'your_api_secret',
         debug: true  // To get console messages.
