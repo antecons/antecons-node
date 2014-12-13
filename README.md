@@ -29,6 +29,12 @@ Currently, the API is quite simple and requires manual specification of the
 endpoint urls. For example, to fetch all datasources:
 
 
-    Antecons.get('/datasource, null, function(datasources) {
+    Antecons.get('/datasource', null, function(datasources) {
         console.log(datasources);        
-    })
+    });
+
+Or to add a new datasource:
+
+    Antecons.get('/datasource', { title: 'Test' }, function(datasources) {
+        console.log(datasources);        
+    });
