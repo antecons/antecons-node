@@ -1,0 +1,20 @@
+{
+  "name": "antecons",
+  "version": "0.1.0",
+  "description": "Antecons API wrapper",
+  "homepage": "https://github.com/antecons/antecons-node",
+  "author": "Antecons <info@antecons.net>",
+  "license": "MIT",
+  "main": "lib/antecons.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/antecons/antecons-node.git"
+  },
+  "bugs": {
+    "url": "https://github.com/antecons/antecons-node/issues"
+  },
+  "keywords": ["Antecons", "api", "node.js"]
+}
