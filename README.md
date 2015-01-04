@@ -12,12 +12,14 @@ Get it from `npm`:
 
 Include `antecons` somewhere in your project and instantiate the API with a
 config containing your API key and API secret:
-    
-    var Antecons = require('antecons')({
-        apiKey: 'your_api_key',
-        apiSecret: 'your_api_secret',
-        debug: true  // To get console messages.
-    });
+
+```js    
+var Antecons = require('antecons')({
+  apiKey: 'your_api_key',
+  apiSecret: 'your_api_secret',
+  debug: true  // To get console messages.
+});
+```
 
 The `debug` value is optional and should only be `true` during development and
 test.
@@ -28,16 +30,20 @@ Usage example
 Currently, the API is quite simple and only implements a single resource: the
 `datasource`. To fetch a list of all datasources:
 
-    Antecons.datasource.list(function(err, datasources) {
-      console.log(datasources);
-    });
+```js
+Antecons.datasource.list(function(err, datasources) {
+  console.log(datasources);
+});
+```
 
 The API calls return a promise so you can also do this:
 
-    Antecons.datasource.list()
-      .then(function(datasources) {
-          console.log(datasources);
-      });
+```js
+Antecons.datasource.list()
+  .then(function(datasources) {
+    console.log(datasources);
+  });
+```
 
 Testing
 -------
