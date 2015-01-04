@@ -16,5 +16,14 @@
   "bugs": {
     "url": "https://github.com/antecons/antecons-node/issues"
   },
-  "keywords": ["Antecons", "api", "node.js"]
+  "keywords": [
+    "Antecons",
+    "api",
+    "node.js"
+  ],
+  "devDependencies": {
+    "chai": "^1.10.0",
+    "mocha": "^2.1.0",
+    "nock": "^0.53.0"
+  }
 }
