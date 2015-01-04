@@ -7,7 +7,7 @@
   "license": "MIT",
   "main": "lib/antecons.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "./node_modules/.bin/mocha"
   },
   "repository": {
     "type": "git",
@@ -25,5 +25,8 @@
     "chai": "^1.10.0",
     "mocha": "^2.1.0",
     "nock": "^0.53.0"
+  },
+  "dependencies": {
+    "q": "^1.1.2"
   }
 }
