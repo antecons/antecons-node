@@ -1,6 +1,6 @@
 {
   "name": "antecons",
-  "version": "0.2.1",
+  "version": "0.2.2",
   "description": "Antecons API wrapper",
   "homepage": "https://github.com/antecons/antecons-node",
   "author": "Antecons <info@antecons.net>",
