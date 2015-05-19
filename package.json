@@ -7,7 +7,7 @@
   "license": "MIT",
   "main": "lib/antecons.js",
   "scripts": {
-    "test": "./node_modules/.bin/mocha"
+    "test": "node_modules/.bin/istanbul cover node_modules/.bin/_mocha"
   },
   "repository": {
     "type": "git",
@@ -22,11 +22,13 @@
     "node.js"
   ],
   "devDependencies": {
-    "chai": "^1.10.0",
+    "chai": "^2.3.0",
+    "istanbul": "^0.3.14",
+    "jshint": "^2.7.0",
     "mocha": "^2.1.0",
-    "nock": "^0.53.0"
+    "nock": "^2.0.0"
   },
   "dependencies": {
-    "q": "^1.1.2"
+    "q": "^1.4.1"
   }
 }
