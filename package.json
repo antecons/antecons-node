@@ -1,6 +1,6 @@
 {
   "name": "antecons",
-  "version": "0.3.1",
+  "version": "1.0.0",
   "description": "Antecons API wrapper",
   "homepage": "https://github.com/antecons/antecons-node",
   "author": "Antecons <info@antecons.net>",
@@ -18,6 +18,8 @@
   },
   "keywords": [
     "Antecons",
+    "recommendations",
+    "recommendation engine",
     "api",
     "node.js"
   ],
