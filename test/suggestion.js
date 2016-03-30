@@ -25,10 +25,10 @@ describe('Suggestion', () => {
 
   it('should return a list of suggestions', () => {
     const mock = nock('https://api.antecons.net')
-      .get('/datasource/test/suggestion?for=product&for_id=beer&limit=10&full=true')
+      .get('/datasource/test/suggestion?for=product&for_id=beer&limit=10&full=true&strong_only=true')
       .reply(201, [suggestion]);
 
-    return antecons.suggestion.list('test', 'product', 'beer', 10, true)
+    return antecons.suggestion.list('test', 'product', 'beer', 10, true, true)
       .then(res => {
         expect(res).to.deep.equal([suggestion]);
         mock.done();
