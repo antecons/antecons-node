@@ -16,28 +16,27 @@ describe('Datasource', function() {
     nock.cleanAll();
   });
 
-  it('should return a list of datasources', function(done) {
-    var datasourceGet = nock('https://api.antecons.net')
+  it('should return a list of datasources', done => {
+    const datasourceGet = nock('https://api.antecons.net')
       .get('/datasource')
       .reply(200, [ds]);
 
-    antecons.datasource.list(function(err, res) {
+    antecons.datasource.list((err, res) => {
       expect(res).to.deep.equal([ds]);
       datasourceGet.done();
       done();
     });
   });
 
-  it('should _promise_ to return a list of datasources', function(done) {
-    var datasourceGet = nock('https://api.antecons.net')
+  it('should _promise_ to return a list of datasources', () => {
+    const datasourceGet = nock('https://api.antecons.net')
       .get('/datasource')
       .reply(200, [ds]);
 
-    antecons.datasource.list()
-      .then(function(res) {
+    return antecons.datasource.list()
+      .then(res => {
         expect(res).to.deep.equal([ds]);
         datasourceGet.done();
-        done();
       });
   });
 
