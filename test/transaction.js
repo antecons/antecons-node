@@ -1,30 +1,28 @@
 'use strict';
 
-var Antecons = require('../lib/antecons'),
+const Antecons = require('../lib/antecons'),
     nock = require('nock'),
     expect = require('chai').expect;
 
-describe('Transaction', function() {
-  var antecons;
-  var transaction = {
+describe('Transaction', () => {
+  let antecons;
+  const transaction = {
     source: 'o',
     transaction_items: ['a', 'b', 'c']
   };
 
-  beforeEach(function() {
-    antecons = Antecons({ apiKey: 'abc', apiSecret: 'def' });
+  beforeEach(() => {
+    antecons = new Antecons({ apiKey: 'abc', apiSecret: 'def' });
   });
 
-  afterEach(function() {
-    nock.cleanAll();
-  });
+  afterEach(() => nock.cleanAll());
 
-  it('should return a list of transactions', function(done) {
-    var mock = nock('https://api.antecons.net')
+  it('should return a list of transactions', done => {
+    const mock = nock('https://api.antecons.net')
       .get('/datasource/test/transaction?page=1&page_size=10')
       .reply(200, [transaction]);
 
-    antecons.transaction.list('test', 1, 10, function(err, res) {
+    antecons.transaction.list('test', 1, 10, (err, res) => {
       if (err) return done(err);
       mock.done();
       expect(res).to.deep.equal([transaction]);
@@ -32,12 +30,12 @@ describe('Transaction', function() {
     });
   });
 
-  it('should add a transaction', function(done) {
-    var mock = nock('https://api.antecons.net')
+  it('should add a transaction', done => {
+    const mock = nock('https://api.antecons.net')
       .post('/datasource/test/transaction', transaction)
       .reply(201);
 
-    antecons.transaction.add('test', transaction, function(err, res) {
+    antecons.transaction.add('test', transaction, (err, res) => {
       if (err) return done(err);
       mock.done();
       done();

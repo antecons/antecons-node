@@ -1,20 +1,18 @@
 'use strict';
 
-var Antecons = require('../lib/antecons'),
-    nock = require('nock'),
-    expect = require('chai').expect;
+const Antecons = require('../lib/antecons'),
+  nock = require('nock'),
+  expect = require('chai').expect;
 
-describe('Datasource', function() {
-  var antecons;
-  var ds = { datasource_id: 'test' };
+describe('Datasource', () => {
+  let antecons;
+  const ds = { datasource_id: 'test' };
 
-  beforeEach(function() {
-    antecons = Antecons({ apiKey: 'abc', apiSecret: 'def' });
+  beforeEach(() => {
+    antecons = new Antecons({ apiKey: 'abc', apiSecret: 'def' });
   });
 
-  afterEach(function() {
-    nock.cleanAll();
-  });
+  afterEach(() => nock.cleanAll());
 
   it('should return a list of datasources', done => {
     const datasourceGet = nock('https://api.antecons.net')
@@ -40,36 +38,36 @@ describe('Datasource', function() {
       });
   });
 
-  it('should return a single of datasource', function(done) {
-    var datasourceGet = nock('https://api.antecons.net')
+  it('should return a single of datasource', done => {
+    const datasourceGet = nock('https://api.antecons.net')
       .get('/datasource/test')
       .reply(200, ds);
 
-    antecons.datasource.single('test', function(err, res) {
+    antecons.datasource.single('test', (err, res) => {
       expect(res).to.deep.equal(ds);
       datasourceGet.done();
       done();
     });
   });
 
-  it('should be able to add a single datasource', function(done) {
-    var datasourceGet = nock('https://api.antecons.net')
+  it('should be able to add a single datasource', done => {
+    const datasourceGet = nock('https://api.antecons.net')
       .post('/datasource')
       .reply(200, [ds]);
 
-    antecons.datasource.add(ds, function(err, res) {
+    antecons.datasource.add(ds, (err, res) => {
       expect(res).to.deep.equal([ds]);
       datasourceGet.done();
       done();
     });
   });
 
-  it('should return http error when a datasource is not found', function(done) {
-    var datasourceGet = nock('https://api.antecons.net')
+  it('should return http error when a datasource is not found', done => {
+    const datasourceGet = nock('https://api.antecons.net')
       .get('/datasource/notfound')
       .reply(404, { code: 404 });
 
-    antecons.datasource.single('notfound', function(err, res) {
+    antecons.datasource.single('notfound', (err, res) => {
       expect(res).to.have.property('code', 404);
       datasourceGet.done();
       done();
