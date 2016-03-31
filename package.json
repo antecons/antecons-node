@@ -1,9 +1,9 @@
 {
   "name": "antecons",
-  "version": "1.0.0",
+  "version": "2.0.0",
   "description": "Antecons API wrapper",
   "homepage": "https://github.com/antecons/antecons-node",
-  "author": "Antecons <info@antecons.net>",
+  "author": "Receiptful <help@receiptful.com>",
   "license": "MIT",
   "main": "lib/antecons.js",
   "scripts": {
