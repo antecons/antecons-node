@@ -46,4 +46,13 @@ describe('Suggestion', () => {
         mock.done();
       });
   });
+
+  it('should support a false url param before a true one', () => {
+    const mock = nock('https://api.antecons.net')
+      .get('/datasource/test/suggestion?for=product&for_id=beer&limit=10&full=&strong_only=true')
+      .reply(201, [suggestion]);
+
+    return antecons.suggestion.list('test', 'product', 'beer', 10, false, true)
+      .then(res => mock.done());
+  });
 });
