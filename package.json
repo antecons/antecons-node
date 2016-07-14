@@ -1,6 +1,6 @@
 {
   "name": "antecons",
-  "version": "2.0.1",
+  "version": "2.0.5",
   "description": "Antecons API wrapper",
   "homepage": "https://github.com/antecons/antecons-node",
   "author": "Receiptful <help@receiptful.com>",
