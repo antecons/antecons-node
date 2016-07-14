@@ -7,7 +7,7 @@ deploy:
   provider: npm
   email: stefano+npm@sala.io
   api_key:
-    secure: d1z/rsxHInoLYmSkYe2imoLkbBZf4e3QHSZ0nlZwAB1iwImwNskVE6ZQMy7xXojze1by0m/l5dK/5wL+IKB4isPYsv5N+XN/+dYGopAzhJ7MujyUpG09oYp72BlSK7vIBLi7MMEC/pVUvuBtRr8wJj1sY63YITBvzY5j2k3HKmI=
+    secure: iF2+UizQwSFTUahEtkCOFWGZgvgZ+hxxunqfu2CX50le+Hy0s8z+NnrdADPPohWxnnuU8TQO2QFN71nroek0TY9CC+nAYccyu3bnMdO1v9RWlikegGGeDYcmakAphxN7aO77QmN3FWfXRMblOc+XTzm+kiO+nhw9hbOG52ZOprc=
   on:
     tags: true
     repo: antecons/antecons-node
