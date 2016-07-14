@@ -1,0 +1,16 @@
+language: node_js
+node_js:
+- '6'
+- '5'
+- '4'
+deploy:
+  provider: npm
+  email: stefano+npm@sala.io
+  api_key:
+    secure: d1z/rsxHInoLYmSkYe2imoLkbBZf4e3QHSZ0nlZwAB1iwImwNskVE6ZQMy7xXojze1by0m/l5dK/5wL+IKB4isPYsv5N+XN/+dYGopAzhJ7MujyUpG09oYp72BlSK7vIBLi7MMEC/pVUvuBtRr8wJj1sY63YITBvzY5j2k3HKmI=
+  on:
+    tags: true
+    repo: antecons/antecons-node
+notifications:
+  slack:
+    secure: bop7SIc1IrvE+NLB4EvFGkFm1FNS00mB5Tnz45hcn6X9wvFTe5cdZ4bKjH1nWambfFDl/ozjH1ZjrUiy46+dIad8D41wUuepErgCOeOUnCbq4W7hFAbMSKZgcda6Xs+lFIr3NnCE+PPCb3ijx8XQsYJ+fp1Xfun11xjF6PNSI10=
